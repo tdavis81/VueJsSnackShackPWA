@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+		<link rel="apple-touch-icon" href="meta/ios/iTunesArtwork@2x.png">
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+		<link href="homescreenStyle.css" rel="stylesheet" type="text/css" />
+		<script src="homescreen.js"></script>
+
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+  	<script src="https://unpkg.com/vue"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-firestore.js"></script>
+		<script src="https://unpkg.com/vue-firestore"></script>
+		<script src="https://unpkg.com/v-data-table/dist/v-data-table.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+		
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Snack Shack</title>
+    
+
+</head>
+
+	</head>
+	
+    
+
+
+	<body>
+		
+		<div id="app">
+			
+			<h1 class="center">Snack Shack</h1>
+
+			<hr style="width:85%;margin-bottom:15%"/>
+
+			<form id="search">
+				<label for="query">Search</label>
+				<input name="query" class="form-control" type="text" v-model="searchQuery">
+			</form>
+			
+			<data-table style="overflow-x:auto;width:100%" :data="items" :columns-to-display="gridColumns" :filter-key="searchQuery" :child-hideable="true" :child-init-hide="true" >
+			
+			</data-table>
+			
+			</div>
+		
+
+    <script src="script.js"></script>
+ 
+  </body>
+
+
+</html>

@@ -1,0 +1,43 @@
+<script>
+import Firebase from 'firebase'
+
+let config1 = { databaseURL: "https://test-472d2.firebaseio.com" };
+let app1 = Firebase.initializeApp(config1);
+let db1 = app1.database();
+let charRef = Firebase.database().ref('characters');
+let selectRef = Firebase.database().ref('select');
+
+export default {
+  name: "app",
+  firebase: {
+    chars: db1.ref("characters"),
+    select: db1.ref("select")
+  },
+  methods: {
+    changeSelect: function(n) {
+      let key = this.select[0]['.key'];
+      selectRef.child(key).remove();
+      selectRef.push({'select':n});
+    },
+    addChar: function(c) {
+      charRef.push(c);
+    }
+  }
+};
+</script>
+
+
+
+<link rel="apple-touch-icon" sizes="152x152" href="meta/ios/ios-appicon-152-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="meta/ios/ios-appicon-180-180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png">
+
+
+    <link href="/apple_splash_2048.png" sizes="2048x2732" rel="apple-touch-startup-image" />
+    <link href="/apple_splash_1668.png" sizes="1668x2224" rel="apple-touch-startup-image" />
+    <link href="meta/ios/ios-launchimage-1536-2048.png" sizes="1536x2048" rel="apple-touch-startup-image" />
+    <link href="/apple_splash_1125.png" sizes="1125x2436" rel="apple-touch-startup-image" />
+    <link href="meta/ios/ios-launchimage-2208-1242.png" sizes="1242x2208" rel="apple-touch-startup-image" />
+    <link href="meta/ios/ios-launchimage-750-1334.png" sizes="750x1334" rel="apple-touch-startup-image" />
+    <link href="meta/ios/ios-launchimage-750-1294.png" sizes="750x1294" rel="apple-touch-startup-image"/>
+    <link href="meta/ios/ios-launchimage-640-1136.png" sizes="640x1136" rel="apple-touch-startup-image" />
